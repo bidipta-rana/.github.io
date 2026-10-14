@@ -23,49 +23,87 @@ const SITE = {
   github: ""   // add your GitHub profile URL here. Leave "" to hide it.
 };
 
+const HIGHLIGHTS = [
+  ["IEEE APSCON 2025", "Presented a research paper"],
+  ["GATE 2025 · AIR 82", "Biomedical Engineering"],
+  ["B.Tech CGPA 10/10", "Honors in Bioinformatics"],
+  ["3 publications + 1 patent", "Plus 1 paper accepted at INACOMM 2025"]
+];
+
 const PROJECTS = [
   {
-    id: "robotic-finger",
-    title: "Anthropomorphic robotic finger",
-    kind: "Research project",
-    where: "IIT Jodhpur, Jan 2025 to Jul 2025",
-    summary: "Compared twisted string actuation with cable-pulling actuation for a human-like robotic finger.",
-    description: "Design and development of an anthropomorphic robotic finger, with a comparative study of two actuation mechanisms: twisted string actuation (TSA) and cable-pulling actuation (CPA). The research article is accepted for the December 2025 INACOMM International Conference on Machines and Mechanisms.",
-    tags: ["Robotics", "Actuation", "CAD", "3D printing"],
-    cover: "", images: [], videos: [], reports: []
+    id: "raman-oral-cancer", category: "internship",
+    title: "Raman spectra classification for oral cancer",
+    kind: "Internship project",
+    where: "Bhabha Atomic Research Centre (BARC), Mumbai · IIT Madras summer internship, 2026",
+    summary: "Machine learning on Raman spectra to tell healthy and cancerous oral tissue apart.",
+    description: "Guided by Dr. R. S. Sengar (Division of Remote Handling and Robotics, BARC). I compared signal pre-processing methods (baseline correction, normalisation, SURE wavelet denoising) and feature extraction with PCA and PLS, then trained SVM, Random Forest, XGBoost and QDA classifiers on a portable Raman system's data: 1682 spectra from 345 biopsy-verified patients (785 nm excitation). PLS + XGBoost performed best, with 72.4% accuracy, 73.3% sensitivity and 71.4% specificity. Generative data augmentation was also explored for the small dataset.",
+    tags: ["Raman spectroscopy", "Machine learning", "Signal processing", "Oral cancer"],
+    cover: "assets/images/raman-oral-cancer/slide-05.jpg",
+    images: ["assets/images/raman-oral-cancer/slide-05.jpg", "assets/images/raman-oral-cancer/slide-06.jpg"],
+    videos: [],
+    reports: [
+      { label: "Internship report (PDF, 28 pages)", url: "assets/reports/barc-raman-internship-report.pdf" },
+      { label: "Presentation slides (PDF)", url: "assets/reports/barc-raman-internship-slides.pdf" }
+    ]
   },
   {
-    id: "chemistry-analyzer",
+    id: "robotic-finger", category: "research",
+    title: "Anthropomorphic robotic finger",
+    kind: "Research project",
+    where: "IIT Jodhpur, Jan 2025 to Jul 2025 · with Bhivraj Suthar",
+    summary: "Compared twisted string actuation with cable-pulling actuation for a human-like robotic finger.",
+    description: "Design, fabrication and testing of two 3D-printed anthropomorphic finger prototypes: one tendon-style cable-pulling finger and one driven by twisted string actuation (TSA). Joint angles were read with rotary position sensors and the two mechanisms were compared on range of motion, actuation speed and energy consumption, to guide actuator choice for prosthetic and robotic hands. The paper is accepted at the December 2025 INACOMM International Conference on Machines and Mechanisms.",
+    tags: ["Robotics", "Twisted string actuation", "CAD", "3D printing"],
+    cover: "assets/images/robotic-finger/design.jpg",
+    images: ["assets/images/robotic-finger/design.jpg", "assets/images/robotic-finger/cable-pulling-setup.jpg", "assets/images/robotic-finger/sensor-placement.jpg"],
+    videos: [],
+    reports: [{ label: "Paper: Cable pulling vs twisted string actuation (PDF)", url: "assets/reports/robotic-finger-paper.pdf" }]
+  },
+  {
+    id: "chemistry-analyzer", category: "internship",
     title: "Portable chemistry analyzer",
     kind: "Internship project",
     where: "BioSpectronics Pvt. Ltd., Oct 2023 to Oct 2024",
-    summary: "A portable device that measures body analytes by analysing the concentration in body fluids.",
-    description: "Development of a portable chemistry analyzer designed to detect various body analytes through concentration analysis of body fluids, to improve diagnostic capability. Related work is published in IEEE Sensors Journal.",
-    tags: ["Point-of-care", "Biosensing", "Diagnostics"],
-    cover: "", images: [], videos: [], reports: []
+    summary: "A paper-microfluidic device that measures blood analytes from just 100 µL of serum.",
+    description: "A compact point-of-care analyzer that detects body analytes from fluid concentration. Wax-printed paper microchannels with reagents sit in a 3D-printed housing, where an AS7341 multi-spectral sensor and an ESP32 measure absorbed light in real time. Tested on albumin, creatinine, urea, triglycerides, total protein and glucose, it reached correlation coefficients above 0.98. Published in IEEE Sensors Journal.",
+    tags: ["Point-of-care", "Biosensing", "ESP32", "Microfluidics"],
+    cover: "assets/images/chemistry-analyzer/cad-design.png",
+    images: ["assets/images/chemistry-analyzer/cad-design.png", "assets/images/chemistry-analyzer/prototype.jpg"],
+    videos: [],
+    reports: [{ label: "IEEE Sensors Journal paper (PDF)", url: "assets/reports/biochemistry-analyzer-paper.pdf" }]
   },
   {
-    id: "vibration-device",
+    id: "vibration-device", category: "internship",
     title: "Wireless hand-transmitted vibration meter",
     kind: "Internship project",
     where: "NIT Rourkela, May 2024 to Jun 2024",
-    summary: "An ESP32 device that streams hand-transmitted vibration from power tools at 600 Hz.",
-    description: "Designed and built a wireless device around an ESP32 microcontroller to measure hand-transmitted vibration in power tools, with real-time data visualisation at 600 Hz.",
-    tags: ["ESP32", "Wireless", "Signal acquisition"],
-    cover: "", images: [], videos: [], reports: []
+    summary: "A wearable ESP32 device that streams hand-arm vibration from power tools at 600 Hz.",
+    description: "A wireless wearable module with a MEMS accelerometer and an ESP32 that measures hand-transmitted vibration while drilling and shows it live at 600 Hz. In the follow-up study, ten participants drilled teak wood bare-handed and with nylon, rubber and leather gloves. Gloves cut the frequency-weighted vibration magnitude by 16.78%, 30.91% and 23.78% respectively.",
+    tags: ["ESP32", "MEMS accelerometer", "Wireless", "Python"],
+    cover: "assets/images/vibration-device/setup.png",
+    images: ["assets/images/vibration-device/setup.png"],
+    videos: ["assets/videos/vibration-device.mp4"],
+    reports: [
+      { label: "Paper: Hand-transmitted vibration during drilling (PDF)", url: "assets/reports/vibration-monitoring-paper.pdf" },
+      { label: "Python code for vibration filtering", url: "assets/reports/vibration-filtering-code.py" }
+    ]
   },
   {
-    id: "emg-hand",
+    id: "emg-hand", category: "academic",
     title: "Machine learning robotic hand using EMG",
     kind: "Academic project",
-    where: "B.Tech, RCOEM Nagpur",
-    summary: "A robotic hand that mimics natural hand movement from muscle signals.",
-    description: "A machine learning based robotic hand that mimics natural hand movements using EMG sensors interfaced with a controller and servo motors, aimed at assistive technologies.",
-    tags: ["EMG", "Machine learning", "Servo control", "Assistive tech"],
-    cover: "", images: [], videos: [], reports: []
+    where: "B.Tech final year, RCOEM Nagpur · guide Dr. Vivek Khetade",
+    summary: "A 3D-printed hand that mimics natural hand movement from muscle signals.",
+    description: "A team project (with Charvi Sharma, Abhijit Awasthi and Ayushh Khaire). EMG sensors read muscle activity, a machine learning model classifies the gesture, and an Arduino Uno drives five servo motors that pull strings to move the fingers of a 3D-printed hand, aimed at assistive technology.",
+    tags: ["EMG", "Machine learning", "Arduino", "Assistive tech"],
+    cover: "assets/images/emg-hand/cover.jpg",
+    images: [],
+    videos: ["assets/videos/emg-hand.mp4"],
+    reports: [{ label: "Final year project report (PDF)", url: "assets/reports/emg-hand-project-report.pdf" }]
   },
   {
-    id: "smart-glasses",
+    id: "smart-glasses", category: "academic",
     title: "Smart glasses for the visually impaired",
     kind: "Academic project",
     where: "B.Tech, RCOEM Nagpur",
@@ -75,28 +113,41 @@ const PROJECTS = [
     cover: "", images: [], videos: [], reports: []
   },
   {
-    id: "health-monitor",
+    id: "health-monitor", category: "academic",
     title: "IoT health monitoring system",
     kind: "Academic project",
     where: "B.Tech, RCOEM Nagpur",
-    summary: "Pulse oximeter and temperature readings sent to a remote dashboard.",
-    description: "A health monitoring system that interfaces an ESP32 with a pulse oximeter, a temperature sensor and a seven-segment display. IoT connectivity enables remote monitoring and real-time visualisation of vital parameters.",
+    summary: "Pulse oximeter and temperature readings sent to a phone over Wi-Fi.",
+    description: "A health monitoring system that interfaces an ESP32 with a pulse oximeter, a DS18B20 temperature sensor and a seven-segment display. A built-in web server shows the readings on a phone, enabling remote monitoring of vital parameters in real time.",
     tags: ["ESP32", "IoT", "Vitals monitoring"],
-    cover: "", images: [], videos: [], reports: []
+    cover: "assets/images/health-monitor/demo.jpg",
+    images: ["assets/images/health-monitor/demo.jpg"],
+    videos: [],
+    reports: [{ label: "Interfacing slides (PDF)", url: "assets/reports/health-monitor-slides.pdf" }]
   },
   {
-    id: "ironing-device",
+    id: "ironing-device", category: "patent",
     title: "Automated ironing device",
     kind: "Design patent",
-    where: "Design No. 412341-001, published June 2024",
+    where: "Design No. 412341-001, registered June 2024 · with J. B. Zalke and A. Khaire",
     summary: "An ironing device that needs minimal human interaction.",
-    description: "A design for an automated ironing device that minimises human interaction, combining sensors and automated structures for precise ironing, pressure control and movement.",
+    description: "A registered design for an automated ironing device that minimises human interaction, combining sensors and automated structures for precise ironing, pressure control and movement. Registered in class 07-05 under the Designs Act, 2000.",
     tags: ["Design patent", "Mechanical design", "Sensors"],
-    cover: "", images: [], videos: [], reports: []
+    cover: "assets/images/ironing-device/certificate.png",
+    images: ["assets/images/ironing-device/certificate.png"],
+    videos: [],
+    reports: [{ label: "Design registration certificate (PDF)", url: "assets/reports/design-certificate-412341-001.pdf" }]
   }
 ];
 
 const EXPERIENCE = [
+  {
+    when: "Summer 2026",
+    role: "Research intern",
+    org: "Bhabha Atomic Research Centre (BARC), Mumbai",
+    text: "Built a machine learning pipeline to classify Raman spectra of healthy and cancerous oral tissue, with Dr. R. S. Sengar.",
+    project: "raman-oral-cancer"
+  },
   {
     when: "Jan 2025 to Jul 2025",
     role: "Research intern",
@@ -147,8 +198,8 @@ const PUBLICATIONS = [
     url: "https://doi.org/10.1007/978-981-96-3758-443"
   },
   {
-    title: "Design and Development of an Anthropomorphic Robotic Finger: twisted string vs cable-pulling actuation",
-    authors: "B. Rana et al.",
+    title: "Anthropomorphic Robotic Fingers Driven by Cable Pulling and Twisted String Actuation: Design and Experimental Evaluation",
+    authors: "B. Rana, B. Suthar",
     venue: "Accepted, INACOMM International Conference on Machines and Mechanisms, December 2025",
     url: ""
   },

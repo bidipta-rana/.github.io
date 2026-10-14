@@ -39,24 +39,44 @@ function placeholderCover() {
   return el("div", { class: "cover placeholder" }, svg);
 }
 
-/* ---------- projects ---------- */
+/* ---------- highlights ---------- */
+const hl = document.getElementById("highlights");
+HIGHLIGHTS.forEach(([a, b]) => hl.append(el("li", {}, el("strong", { text: a }), el("span", { text: b }))));
+
+/* ---------- projects + filters ---------- */
 const grid = document.getElementById("project-grid");
-PROJECTS.forEach(p => {
-  const cover = p.cover
-    ? el("img", { class: "cover", src: p.cover, alt: "", loading: "lazy" })
-    : placeholderCover();
-  const card = el("button", { class: "card", type: "button", "data-id": p.id },
-    cover,
-    el("div", { class: "card-body" },
-      el("p", { class: "card-kind", text: p.kind }),
-      el("h3", { text: p.title }),
-      el("p", { class: "card-summary", text: p.summary }),
-      el("ul", { class: "tags" }, ...p.tags.map(t => el("li", { text: t })))
-    )
-  );
-  card.addEventListener("click", () => openProject(p.id));
-  grid.append(card);
+const filterBox = document.getElementById("filters");
+const FILTERS = [["all", "All"], ["research", "Research"], ["internship", "Internship"], ["academic", "Academic"], ["patent", "Patent"]];
+
+function renderProjects(cat) {
+  grid.replaceChildren();
+  PROJECTS.filter(p => cat === "all" || p.category === cat).forEach(p => {
+    const cover = p.cover
+      ? el("img", { class: "cover", src: p.cover, alt: "", loading: "lazy" })
+      : placeholderCover();
+    const card = el("button", { class: "card", type: "button", "data-id": p.id },
+      cover,
+      el("div", { class: "card-body" },
+        el("p", { class: "card-kind", text: p.kind }),
+        el("h3", { text: p.title }),
+        el("p", { class: "card-summary", text: p.summary }),
+        el("ul", { class: "tags" }, ...p.tags.map(t => el("li", { text: t })))
+      )
+    );
+    card.addEventListener("click", () => openProject(p.id));
+    grid.append(card);
+  });
+}
+FILTERS.forEach(([key, label], i) => {
+  const b = el("button", { type: "button", class: "chip", "aria-pressed": i === 0 ? "true" : "false", text: label });
+  b.addEventListener("click", () => {
+    filterBox.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", "false"));
+    b.setAttribute("aria-pressed", "true");
+    renderProjects(key);
+  });
+  filterBox.append(b);
 });
+renderProjects("all");
 
 /* ---------- experience ---------- */
 const timeline = document.getElementById("timeline");
