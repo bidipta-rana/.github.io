@@ -18,21 +18,16 @@
 */
 
 const SITE = {
-  email: "",   // add your email here, e.g. "name@example.com". Leave "" to hide it.
+  email: "bidipta2905@gmail.com",
+  phone: "+91 73918 32565",
   linkedin: "https://www.linkedin.com/in/bidipta-rana",
-  github: ""   // add your GitHub profile URL here. Leave "" to hide it.
+  github: ""
 };
-
-const HIGHLIGHTS = [
-  ["IEEE APSCON 2025", "Presented a research paper"],
-  ["GATE 2025 · AIR 82", "Biomedical Engineering"],
-  ["B.Tech CGPA 10/10", "Honors in Bioinformatics"],
-  ["3 publications + 1 patent", "Plus 1 paper accepted at INACOMM 2025"]
-];
 
 const PROJECTS = [
   {
     id: "raman-oral-cancer", category: "internship",
+    status: "Completed", year: "2026", org: "BARC Mumbai", fit: "contain",
     title: "Raman spectra classification for oral cancer",
     kind: "Internship project",
     where: "Bhabha Atomic Research Centre (BARC), Mumbai · IIT Madras summer internship, 2026",
@@ -49,6 +44,7 @@ const PROJECTS = [
   },
   {
     id: "robotic-finger", category: "research",
+    status: "Paper accepted", year: "2025", org: "IIT Jodhpur", fit: "contain",
     title: "Anthropomorphic robotic finger",
     kind: "Research project",
     where: "IIT Jodhpur, Jan 2025 to Jul 2025 · with Bhivraj Suthar",
@@ -62,6 +58,7 @@ const PROJECTS = [
   },
   {
     id: "chemistry-analyzer", category: "internship",
+    status: "Published", year: "2023-24", org: "BioSpectronics", fit: "contain",
     title: "Portable chemistry analyzer",
     kind: "Internship project",
     where: "BioSpectronics Pvt. Ltd., Oct 2023 to Oct 2024",
@@ -75,6 +72,7 @@ const PROJECTS = [
   },
   {
     id: "vibration-device", category: "internship",
+    status: "Completed", year: "2024", org: "NIT Rourkela", fit: "contain",
     title: "Wireless hand-transmitted vibration meter",
     kind: "Internship project",
     where: "NIT Rourkela, May 2024 to Jun 2024",
@@ -91,6 +89,7 @@ const PROJECTS = [
   },
   {
     id: "emg-hand", category: "academic",
+    status: "Completed", year: "2024", org: "RCOEM Nagpur", fit: "cover",
     title: "Machine learning robotic hand using EMG",
     kind: "Academic project",
     where: "B.Tech final year, RCOEM Nagpur · guide Dr. Vivek Khetade",
@@ -104,6 +103,7 @@ const PROJECTS = [
   },
   {
     id: "smart-glasses", category: "academic",
+    status: "Completed", year: "", org: "RCOEM Nagpur", fit: "cover",
     title: "Smart glasses for the visually impaired",
     kind: "Academic project",
     where: "B.Tech, RCOEM Nagpur",
@@ -114,6 +114,7 @@ const PROJECTS = [
   },
   {
     id: "health-monitor", category: "academic",
+    status: "Completed", year: "", org: "RCOEM Nagpur", fit: "cover",
     title: "IoT health monitoring system",
     kind: "Academic project",
     where: "B.Tech, RCOEM Nagpur",
@@ -127,6 +128,7 @@ const PROJECTS = [
   },
   {
     id: "ironing-device", category: "patent",
+    status: "Registered", year: "2024", org: "RCOEM Nagpur", fit: "contain",
     title: "Automated ironing device",
     kind: "Design patent",
     where: "Design No. 412341-001, registered June 2024 · with J. B. Zalke and A. Khaire",
@@ -180,49 +182,69 @@ const EXPERIENCE = [
 
 const PUBLICATIONS = [
   {
+    type: "Journal article", status: "Published", year: "2025",
     title: "Microfluidic Paper-Based Portable Biochemistry Analyzer for Blood Parameter Sensing",
     authors: "S. Palekar, B. Rana, A. Khaire, A. Awasthi, M. Mahule, J. Kalambe",
     venue: "IEEE Sensors Journal, vol. 25, no. 10, pp. 18155-18162, May 2025",
     url: "https://doi.org/10.1109/JSEN.2025.3558549"
   },
   {
+    type: "Conference paper", status: "Presented", year: "2025",
     title: "Graphite Electrode Based Bipolar Electrode Electrochemiluminescence Portable Platform for Point-of-Care-Testing Applications",
     authors: "A. Khaire, B. Rana, A. Awasthi, S. Palekar, M. Bhaiyya, J. Kalambe",
-    venue: "IEEE Applied Sensing Conference (APSCON), Hyderabad, 2025, pp. 395-398. Presented at the conference.",
+    venue: "IEEE Applied Sensing Conference (APSCON), Hyderabad, 2025, pp. 395-398",
     url: "https://doi.org/10.1109/APSCON63569.2025.11144259"
   },
   {
+    type: "Book chapter", status: "Published", year: "2025",
     title: "Enzymatic Chemiresistive Interdigitated Electrodes Fabricated by Screen-Printing and Functionalized with Novel Green Synthesized Nanoparticles for Detection of Glucose Concentrations",
     authors: "J. B. Zalke, N. P. Narkhede, D. Rotake, B. Rana, C. Sharma",
     venue: "Lecture Notes in Electrical Engineering, pp. 505-519, Jan 2025",
     url: "https://doi.org/10.1007/978-981-96-3758-443"
   },
   {
+    type: "Conference paper", status: "Accepted", year: "2025",
     title: "Anthropomorphic Robotic Fingers Driven by Cable Pulling and Twisted String Actuation: Design and Experimental Evaluation",
     authors: "B. Rana, B. Suthar",
-    venue: "Accepted, INACOMM International Conference on Machines and Mechanisms, December 2025",
-    url: ""
+    venue: "INACOMM International Conference on Machines and Mechanisms, December 2025",
+    url: "", project: "robotic-finger"
   },
   {
+    type: "Design patent", status: "Registered", year: "2024",
     title: "Automated Ironing Device",
-    authors: "Design patent",
-    venue: "Design No. 412341-001, published June 2024",
-    url: ""
+    authors: "Shri Ramdeobaba College of Engineering and Management, J. B. Zalke, B. Rana, A. Khaire",
+    venue: "Design No. 412341-001, class 07-05, registered June 2024",
+    url: "", project: "ironing-device"
   }
 ];
 
-const EDUCATION = [
-  ["M.Tech, Biomedical Engineering (2025 to 2027)", "Indian Institute of Technology Madras, Tamil Nadu"],
-  ["B.Tech, Biomedical Engineering, Honors in Bioinformatics (2021 to 2025)", "Shri Ramdeobaba College of Engineering and Management, Nagpur. CGPA 10/10"],
-  ["Higher Secondary, 93.17% (2019 to 2021)", "Pace Junior Science College, Nerul"],
-  ["Secondary School, 95.6% (2019)", "J H Ambani School, Lodhivali"]
+const ABOUT = [
+  "I am a biomedical engineer who likes building things that measure the body: wearable sensors, low-cost diagnostic devices and robotic hands. My work sits where embedded electronics, signal processing and machine learning meet clinical needs.",
+  "I am doing my M.Tech in Biomedical Engineering at IIT Madras. Before that I finished my B.Tech with honors in bioinformatics and a CGPA of 10/10, and spent several summers in research labs, from a startup building a portable blood analyzer to BARC, where I worked on machine learning for oral cancer detection with Raman spectroscopy."
 ];
 
-const SKILLS = [
-  ["Technical", "CAD design (Fusion 360), 3D printing, Python, C, microcontrollers (ESP32, Arduino)"],
-  ["Research", "Technical writing, problem solving, critical thinking, literature review"],
-  ["Recognition", "GATE 2025: All India Rank 82 in Biomedical Engineering"],
-  ["Certifications", "IBM: Python for Data Science. L&T Edutech: Data Analytics Fundamentals"],
+const TYPED = ["wearable sensors", "robotic hands", "point-of-care diagnostics", "ML for cancer detection"];
+
+const MARQUEE = ["IIT Madras", "BARC Mumbai", "IIT Jodhpur", "NIT Rourkela", "BioSpectronics", "MGM Medical College", "RCOEM Nagpur", "IEEE EMBS"];
+
+const EDUCATION = [
+  { degree: "M.Tech, Biomedical Engineering", school: "Indian Institute of Technology Madras", when: "2025 to 2027", note: "Tamil Nadu" },
+  { degree: "B.Tech, Biomedical Engineering (Honors in Bioinformatics)", school: "Shri Ramdeobaba College of Engineering and Management", when: "2021 to 2025", note: "CGPA 10/10 · Nagpur" },
+  { degree: "Higher Secondary (HSC)", school: "Pace Junior Science College, Nerul", when: "2019 to 2021", note: "93.17%" },
+  { degree: "Secondary School (SSC)", school: "J H Ambani School, Lodhivali", when: "2019", note: "95.6%" }
+];
+
+const SKILL_GROUPS = [
+  { title: "Embedded and sensing", items: ["ESP32", "Arduino", "EMG sensors", "Pulse oximetry", "MEMS accelerometers", "Ultrasonic sensing", "Multi-spectral sensing (AS7341)", "NE555 circuits"] },
+  { title: "Programming and ML", items: ["Python", "C", "CNN models", "SVM", "Random Forest", "XGBoost", "PCA and PLS", "Wavelet denoising"] },
+  { title: "Design and fabrication", items: ["Fusion 360", "3D printing", "Prototyping", "Enclosure design", "Design patent"] },
+  { title: "Biomedical", items: ["Raman spectroscopy", "Point-of-care diagnostics", "Biosensors", "Microfluidic paper devices", "ECG, ventilator and defibrillator upkeep"] },
+  { title: "Research", items: ["Technical writing", "Literature review", "Problem solving", "Critical thinking", "Conference presenting"] }
+];
+
+const RECOGNITION = [
+  ["GATE 2025", "All India Rank 82 in Biomedical Engineering"],
   ["Leadership", "Vice Chairperson, IEEE EMBS RCOEM Student Branch. Executive Member, REEF RCOEM"],
-  ["Workshops and conferences", "IEEE APSCON 2025 (presenter). Electrochemical Biosensor Technology workshop, Dec 2024. International Clinical Engineering and Health Technology Management Congress, AMTZ, Nov 2023"]
+  ["Certifications", "IBM: Python for Data Science. L&T Edutech: Data Analytics Fundamentals"],
+  ["Workshops and conferences", "IEEE APSCON 2025 (presenter). Electrochemical Biosensor Technology workshop, Dec 2024. Clinical Engineering and Health Technology Management Congress, AMTZ, Nov 2023"]
 ];
