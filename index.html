@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bidipta Rana | Biomedical Engineer</title>
+  <meta name="description" content="Portfolio of Bidipta Rana: biomedical engineering research on wearable sensing, robotics and point-of-care diagnostics.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip" href="#work">Skip to projects</a>
+
+<header class="site-header">
+  <a class="brand" href="#top">Bidipta Rana</a>
+  <nav aria-label="Main">
+    <a href="#work">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#publications">Publications</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <svg class="trace" id="trace" viewBox="0 0 1200 140" preserveAspectRatio="none" aria-hidden="true">
+      <path id="trace-path" d="" />
+    </svg>
+    <div class="hero-text">
+      <h1>Bidipta Rana</h1>
+      <p class="lead">I build wearable sensors, robotic hands and low-cost diagnostic devices. I am a biomedical engineering M.Tech student at IIT Madras.</p>
+      <p class="actions">
+        <a class="btn primary" href="assets/Bidipta_Rana_Resume.pdf" target="_blank" rel="noopener">Open resume (PDF)</a>
+        <a class="btn" href="#work">See projects</a>
+        <a class="btn" id="linkedin-link" href="https://www.linkedin.com/in/bidipta-rana" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="work" class="section">
+    <h2>Projects</h2>
+    <p class="section-note">Select a project to see photos, video and reports.</p>
+    <div class="grid" id="project-grid"></div>
+  </section>
+
+  <section id="experience" class="section">
+    <h2>Research and internships</h2>
+    <ol class="timeline" id="timeline"></ol>
+  </section>
+
+  <section id="publications" class="section">
+    <h2>Publications and patent</h2>
+    <ul class="pubs" id="pub-list"></ul>
+  </section>
+
+  <section id="about" class="section about">
+    <div>
+      <h2>Education</h2>
+      <dl class="facts" id="education"></dl>
+    </div>
+    <div>
+      <h2>Skills and recognition</h2>
+      <dl class="facts" id="skills"></dl>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <h2>Contact</h2>
+    <p>I am open to research collaborations and internships in biomedical devices, sensing and robotics.</p>
+    <p class="actions" id="contact-actions"></p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> Bidipta Rana</p>
+</footer>
+
+<dialog id="project-dialog" aria-labelledby="dlg-title">
+  <article>
+    <button class="close" id="dlg-close" aria-label="Close project details">Close</button>
+    <p class="dlg-kind" id="dlg-kind"></p>
+    <h3 id="dlg-title"></h3>
+    <p class="dlg-where" id="dlg-where"></p>
+    <div id="dlg-body"></div>
+  </article>
+</dialog>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
